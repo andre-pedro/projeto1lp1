@@ -13,7 +13,7 @@ namespace WolfandSheep
         /// </summary>
         public Square()
         {
-            Sqr = "■ ";
+            Sqr = "■";
         }
     }
 }

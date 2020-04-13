@@ -20,5 +20,13 @@ namespace WolfandSheep
                 Console.WriteLine();
             }
         }
+        public void ShowPosition(int x, int y, char c)
+        {
+            // Set postion
+            Console.SetCursorPosition(x, y);
+
+            // Print
+            Console.WriteLine(c);
+        }
     }
 }

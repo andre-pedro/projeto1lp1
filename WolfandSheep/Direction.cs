@@ -5,11 +5,13 @@ using System.Text;
 namespace WolfandSheep
 {
     /// <summary>
-    /// NPC Types
+    /// Enum Direction. Enumerates all possible directions.
     /// </summary>
-    enum NPCTypes
+    enum Direction
     {
-        Wolf,
-        Sheep
+        Left,
+        Right,
+        Up,
+        Down
     }
 }
