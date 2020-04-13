@@ -5,11 +5,12 @@ namespace WolfandSheep
 {
     class Program
     {
+        private static int[,] Grid { get; } = new int[8, 8];
         static void Main(string[] args)
         {
-            Board b = new Board();
-            b.Render();
-
+            Render b = new Render();
+            b.Draw(Grid);
+            Console.ReadLine();
         }
 
 
