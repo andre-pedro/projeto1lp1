@@ -26,6 +26,9 @@ namespace WolfandSheep
         public void SpawnSheep()
         {
             Grid[7, 0].Type = TileType.Sheep;
+            Grid[7, 2].Type = TileType.Sheep;
+            Grid[7, 4].Type = TileType.Sheep;
+            Grid[7, 6].Type = TileType.Sheep;
         }
     }
 }
