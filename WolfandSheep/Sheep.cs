@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WolfandSheep
 {
-    public class Wolf
+    public class Sheep
     {
         /// <summary>
         /// Column Property.
@@ -18,12 +18,15 @@ namespace WolfandSheep
 
         public Direction Dir { get; set; }
 
-        public Wolf(int column, int row, Direction dir)
+        public int Id { get; set; }
+
+        public Sheep(int column, int row, Direction dir, int id)
         {
             // Build Player
             Column = column;
             Row = row;
             Dir = dir;
+            Id = id;
         }
 
         /// <summary>
@@ -35,31 +38,17 @@ namespace WolfandSheep
             switch (Dir)
             {
                 case Direction.North:
-                    Row--; // Add column
-                    break;
-
-                case Direction.South:
-                    Row++; // Subtract column
+                    Row--; 
                     break;
 
                 case Direction.NorthEast:
-                    Column++; // Add column
+                    Column++; 
                     Row--;
                     break;
 
                 case Direction.NorthWest:
-                    Column--; // Subtract column
+                    Column--; 
                     Row--;
-                    break;
-
-                case Direction.SouthEast:
-                    Column++;
-                    Row++; // Add row
-                    break;
-
-                case Direction.SouthWest:
-                    Column--;
-                    Row++; // Subtract row
                     break;
 
                 default:

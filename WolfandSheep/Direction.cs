@@ -9,9 +9,13 @@ namespace WolfandSheep
     /// </summary>
     public enum Direction
     {
-        Left,
-        Right,
-        Up,
-        Down
+        North,
+        South,
+        East,
+        West,
+        NorthEast,
+        NorthWest,
+        SouthEast,
+        SouthWest
     }
 }
