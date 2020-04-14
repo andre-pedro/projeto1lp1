@@ -8,10 +8,10 @@ namespace WolfandSheep
 
         static void Main(string[] args)
         {
-            GameManager gm = new GameManager();
             Render b = new Render();
+            GameManager gm = new GameManager(b);
             //Wolf w = new Wolf("wolf", 'W', 3, 0, Direction.Down);
-            //b.Draw(Grid);
+
             Console.ReadLine();
         }
 

@@ -12,11 +12,30 @@ namespace WolfandSheep
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-
+                    Console.WriteLine(SetSymbol(grid[i, j]) + " ");
                 }
 
                 Console.WriteLine();
             }
+        }
+
+        public string SetSymbol(Tile tile)
+        {
+            string s = null;
+
+            switch (tile.Type)
+            {
+                case TileType.Empty:
+                    s = "■";
+                    break;
+                case TileType.Wolf:
+                    s = "W";
+                    break;
+                case TileType.Sheep:
+                    s = "S";
+                    break;
+            }
+            return s;
         }
         public void ShowPosition(int x, int y, char c)
         {

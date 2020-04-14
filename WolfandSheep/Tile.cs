@@ -9,7 +9,7 @@ namespace WolfandSheep
         public TileType Type { get; set; }
 
         /// <summary>
-        /// Creates Square Constructor
+        /// Creates Tile Constructor
         /// </summary>
         public Tile(TileType type)
         {

@@ -27,7 +27,6 @@ namespace WolfandSheep
         private void SpawnEntities()
         {
             Random rand = new Random();
-
             int num = 0;
 
             //Check if random is odd
