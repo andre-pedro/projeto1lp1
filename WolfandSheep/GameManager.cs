@@ -15,20 +15,35 @@ namespace WolfandSheep
         {
             this.b = b;
 
-            foreach(Tile sq in Grid)
+            foreach (Tile tile in Grid)
             {
-                sq.Type = TileType.Empty;
+                tile.Type = TileType.Empty;
             }
+            SpawnEntities();
 
             b.Draw(Grid);
         }
 
-        public void SpawnSheep()
+        private void SpawnEntities()
         {
+            Random rand = new Random();
+
+            int num = 0;
+
+            //Check if random is odd
+            while (num % 2 == 0)
+            {
+                num = rand.Next(1, 8);
+            }
+
+            Grid[0, num].Type = TileType.Wolf;
             Grid[7, 0].Type = TileType.Sheep;
             Grid[7, 2].Type = TileType.Sheep;
             Grid[7, 4].Type = TileType.Sheep;
             Grid[7, 6].Type = TileType.Sheep;
+
+
+
         }
     }
 }
