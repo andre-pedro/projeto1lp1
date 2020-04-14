@@ -12,7 +12,7 @@ namespace WolfandSheep
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    Console.WriteLine(SetSymbol(grid[i, j]) + " ");
+                    Console.Write(SetSymbol(grid[i, j]) + " ");
                 }
 
                 Console.WriteLine();

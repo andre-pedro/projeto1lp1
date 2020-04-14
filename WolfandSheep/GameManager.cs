@@ -7,7 +7,7 @@ namespace WolfandSheep
     public class GameManager
     {
         private int[,] Position { get; } = new int[0, 4];
-        private Tile[,] Grid { get; } = new Tile[8, 8];
+        private Tile[,] grid = new Tile[8, 8];
 
         private Render b;
 
@@ -15,13 +15,16 @@ namespace WolfandSheep
         {
             this.b = b;
 
-            foreach (Tile tile in Grid)
+            for (int i = 0; i < grid.GetLength(0); ++i)
             {
-                tile.Type = TileType.Empty;
+                for (int j = 0; j < grid.GetLength(1); j++)
+                {
+                    grid[i, j] = new Tile(TileType.Empty);
+                }
             }
             SpawnEntities();
 
-            b.Draw(Grid);
+            b.Draw(grid);
         }
 
         private void SpawnEntities()
@@ -35,11 +38,11 @@ namespace WolfandSheep
                 num = rand.Next(1, 8);
             }
 
-            Grid[0, num].Type = TileType.Wolf;
-            Grid[7, 0].Type = TileType.Sheep;
-            Grid[7, 2].Type = TileType.Sheep;
-            Grid[7, 4].Type = TileType.Sheep;
-            Grid[7, 6].Type = TileType.Sheep;
+            grid[0, num].Type = TileType.Wolf;
+            grid[7, 0].Type = TileType.Sheep;
+            grid[7, 2].Type = TileType.Sheep;
+            grid[7, 4].Type = TileType.Sheep;
+            grid[7, 6].Type = TileType.Sheep;
 
 
 
