@@ -5,10 +5,11 @@ using System.Text;
 namespace WolfandSheep
 {
     /// <summary>
-    /// NPC Types
+    /// 
     /// </summary>
-    enum NPCTypes
+    public enum TileType
     {
+        Empty,
         Wolf,
         Sheep
     }

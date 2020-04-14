@@ -4,16 +4,16 @@ using System.Text;
 
 namespace WolfandSheep
 {
-    class Square
+    public class Tile
     {
-        public string Sqr { get; }
+        public TileType Type { get; set; }
 
         /// <summary>
         /// Creates Square Constructor
         /// </summary>
-        public Square()
+        public Tile(TileType type)
         {
-            Sqr = "■";
+            Type = type;
         }
     }
 }

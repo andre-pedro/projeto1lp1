@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WolfandSheep
 {
-    class Wolf
+    public class Wolf
     {
         /// <summary>
         /// Name Property.
