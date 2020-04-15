@@ -9,13 +9,13 @@ namespace WolfandSheep
     /// </summary>
     public enum Direction
     {
-        North,
-        South,
-        East,
-        West,
-        NorthEast,
-        NorthWest,
-        SouthEast,
-        SouthWest
+        North = 8,
+        South = 2,
+        East = 6,
+        West = 4,
+        NorthEast = 9,
+        NorthWest = 7,
+        SouthEast = 3,
+        SouthWest = 1
     }
 }
