@@ -15,6 +15,8 @@ namespace WolfandSheep
         /// Row Property.
         /// </summary>
         public int Row { get; set; }
+        public int PreviousColumn { get; private set; }
+        public int PreviousRow { get; private set; }
 
         public Wolf(int row, int column)
         {
@@ -28,15 +30,18 @@ namespace WolfandSheep
         /// </summary>
         public void Move(Direction dir)
         {
+            PreviousColumn = Column;
+            PreviousRow = Row;
+
             // Move according to direction
             switch (dir)
             {
                 case Direction.North:
-                    Row--; // Add column
+                    Row -= 2; // Add column
                     break;
 
                 case Direction.South:
-                    Row++; // Subtract column
+                    Row += 2; // Subtract column
                     break;
 
                 case Direction.NorthEast:
@@ -62,6 +67,11 @@ namespace WolfandSheep
                 default:
                     break;
             }
+        }
+        public void ResetMovement()
+        {
+            Row = PreviousRow;
+            Column = PreviousColumn;
         }
 
     }

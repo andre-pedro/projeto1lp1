@@ -20,7 +20,7 @@ namespace WolfandSheep
         public GameManager(Render b)
         {
             this.b = b;
-            player = true;
+            player = false;
 
             for (int i = 0; i < grid.GetLength(0); ++i)
             {
@@ -61,13 +61,39 @@ namespace WolfandSheep
         private void GameLoop()
         {
             string input = null;
+
+            // Infinite Game Loop
             while (true)
             {
                 b.Draw(grid);
+                // If wolf is playing
                 if (player == false)
                 {
-                    b.ShowMovementsText(player);
+                    while (input != "7" && input != "8" && input != "9" && input != "1" && input != "2" && input != "3" && input != "s")
+                    {
+                        b.ShowMovementsText(player);
+                        input = Console.ReadLine();
+
+                        if (input == "7" || input == "8" || input == "9" || input == "1" || input == "2" || input == "3")
+                        {
+                            wolf.Move((Direction)Convert.ToInt32(input));
+                            if (CheckValidMovement(wolf))
+                            {
+                                grid[wolf.PreviousRow, wolf.PreviousColumn] = grid[wolf.Row, wolf.Column];
+                                grid[wolf.Row, wolf.Column] = wolf;
+                            }
+                            else
+                            {
+                                wolf.ResetMovement();
+                                b.ShowInvalidMovementText();
+                                input = null;
+                            }
+                        }
+                    }
+                    input = null;
+                    player = !player;
                 }
+                // If sheep is playing
                 else
                 {
                     while (input != "1" && input != "2" && input != "3" && input != "4")
@@ -77,11 +103,36 @@ namespace WolfandSheep
                     }
 
                     SelectPlayingSheep(input);
-                    b.ShowMovementsText(player);
-                    Console.ReadKey();
+                    input = null;
+
+                    while (input != "7" && input != "8" && input != "9" && input != "s")
+                    {
+                        b.ShowMovementsText(player);
+                        input = Console.ReadLine();
+
+                        if (input == "7" || input == "8" || input == "9")
+                        {
+                            playingSheep.Move((Direction)Convert.ToInt32(input));
+                            if (CheckValidMovement(playingSheep))
+                            {
+                                grid[playingSheep.PreviousRow, playingSheep.PreviousColumn] = grid[playingSheep.Row, playingSheep.Column];
+                                grid[playingSheep.Row, playingSheep.Column] = playingSheep;
+                            }
+                            else
+                            {
+                                playingSheep.ResetMovement();
+                                b.ShowInvalidMovementText();
+                                input = null;
+                            }
+                        }
+                    }
+                    input = null;
+                    player = !player;
                 }
             }
         }
+
+
         private void SelectPlayingSheep(string input)
         {
             switch (input)
@@ -99,6 +150,38 @@ namespace WolfandSheep
                     playingSheep = sheep4;
                     break;
             }
+        }
+
+        private bool CheckValidMovement(object obj)
+        {
+            bool returnValue = false;
+
+            if (obj is Sheep)
+            {
+                // Check if inside of board bounds
+                if (playingSheep.Row < 0 || playingSheep.Row > grid.GetLength(0) && playingSheep.Column < 0 || playingSheep.Column > grid.GetLength(1))
+                    returnValue = false;
+                else
+                {
+                    if (grid[playingSheep.Row, playingSheep.Column] is Square)
+                        returnValue = true;
+                    else
+                        returnValue = false;
+                }
+            }
+            else
+            {
+                if (wolf.Row < 0 || wolf.Row > grid.GetLength(0) && wolf.Column < 0 || wolf.Column > grid.GetLength(1))
+                    returnValue = false;
+                else
+                {
+                    if (grid[wolf.Row, wolf.Column] is Square)
+                        returnValue = true;
+                    else
+                        returnValue = false;
+                }
+            }
+            return returnValue;
         }
     }
 }

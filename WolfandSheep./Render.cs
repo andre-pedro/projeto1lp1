@@ -75,11 +75,11 @@ namespace WolfandSheep
 
             if (color == false)
             {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkRed;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
             }
 
         }
@@ -99,16 +99,24 @@ namespace WolfandSheep
             if (player == false)
             {
                 Console.WriteLine();
-                Console.WriteLine("I am Wolf. Pick a number from the numpad to move!");
+                Console.WriteLine("I am Wolf. Pick a number from the numpad to move");
+                Console.WriteLine(@"or press ""s"" to skip!");
                 Console.WriteLine();
             }
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("I am Sheep. Pick a number from the numpad to move!");
+                Console.WriteLine("I am Sheep. Pick a number from the numpad to move");
+                Console.WriteLine(@"or press ""s"" to skip!");
                 Console.WriteLine();
-
             }
+        }
+
+        public void ShowInvalidMovementText()
+        {
+            Console.WriteLine();
+            Console.WriteLine(@"This input is invalid. Please select it again or insert ""s"" to skip your turn.");
+            Console.WriteLine();
         }
     }
 }
