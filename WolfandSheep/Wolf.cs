@@ -37,14 +37,6 @@ namespace WolfandSheep
             // Move according to direction
             switch (dir)
             {
-                case Direction.North:
-                    Row -= 2; // Add column
-                    break;
-
-                case Direction.South:
-                    Row += 2; // Subtract column
-                    break;
-
                 case Direction.NorthEast:
                     Column++; // Add column
                     Row--;

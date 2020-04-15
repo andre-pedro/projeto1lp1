@@ -39,10 +39,6 @@ namespace WolfandSheep
             // Move according to direction
             switch (dir)
             {
-                case Direction.North:
-                    Row -= 2;
-                    break;
-
                 case Direction.NorthEast:
                     Column++;
                     Row--;

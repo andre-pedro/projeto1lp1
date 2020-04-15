@@ -70,12 +70,12 @@ namespace WolfandSheep
                 // If wolf is playing
                 if (player == false)
                 {
-                    while (input != "7" && input != "8" && input != "9" && input != "1" && input != "2" && input != "3" && input != "s")
+                    while (input != "7" && input != "9" && input != "1" && input != "3" && input != "s")
                     {
                         b.ShowMovementsText(player);
                         input = Console.ReadLine();
 
-                        if (input == "7" || input == "8" || input == "9" || input == "1" || input == "2" || input == "3")
+                        if (input == "7" || input == "9" || input == "1" || input == "3")
                         {
                             wolf.Move((Direction)Convert.ToInt32(input));
                             if (CheckValidMovement(wolf))
@@ -106,12 +106,12 @@ namespace WolfandSheep
                     SelectPlayingSheep(input);
                     input = null;
 
-                    while (input != "7" && input != "8" && input != "9" && input != "s")
+                    while (input != "7" && input != "9" && input != "s")
                     {
                         b.ShowMovementsText(player);
                         input = Console.ReadLine();
 
-                        if (input == "7" || input == "8" || input == "9")
+                        if (input == "7" || input == "9")
                         {
                             playingSheep.Move((Direction)Convert.ToInt32(input));
                             if (CheckValidMovement(playingSheep))
@@ -160,7 +160,7 @@ namespace WolfandSheep
             if (obj is Sheep)
             {
                 // Check if inside of board bounds
-                if (playingSheep.Row < 0 || playingSheep.Row > grid.GetLength(0) && playingSheep.Column < 0 || playingSheep.Column > grid.GetLength(1))
+                if (playingSheep.Row < 0 || playingSheep.Row >= grid.GetLength(0) || playingSheep.Column < 0 || playingSheep.Column >= grid.GetLength(1))
                     returnValue = false;
                 else
                 {
@@ -172,7 +172,7 @@ namespace WolfandSheep
             }
             else
             {
-                if (wolf.Row < 0 || wolf.Row > grid.GetLength(0) && wolf.Column < 0 || wolf.Column > grid.GetLength(1))
+                if (wolf.Row < 0 || wolf.Row >= grid.GetLength(0) || wolf.Column < 0 || wolf.Column >= grid.GetLength(1))
                     returnValue = false;
                 else
                 {

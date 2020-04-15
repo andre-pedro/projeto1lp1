@@ -101,6 +101,10 @@ namespace WolfandSheep
             {
                 Console.WriteLine();
                 Console.WriteLine("I am Wolf. Pick a number from the numpad to move");
+                Console.WriteLine("7   9");
+                Console.WriteLine(@" \ / ");
+                Console.WriteLine(@" / \ ");
+                Console.WriteLine("1   3");
                 Console.WriteLine(@"or press ""s"" to skip!");
                 Console.WriteLine();
             }
@@ -108,6 +112,8 @@ namespace WolfandSheep
             {
                 Console.WriteLine();
                 Console.WriteLine("I am Sheep. Pick a number from the numpad to move");
+                Console.WriteLine("7   9");
+                Console.WriteLine(@" \ / ");
                 Console.WriteLine(@"or press ""s"" to skip!");
                 Console.WriteLine();
             }
@@ -116,7 +122,7 @@ namespace WolfandSheep
         public void ShowInvalidMovementText()
         {
             Console.WriteLine();
-            Console.WriteLine(@"This input is invalid. Please select it again or insert ""s"" to skip your turn.");
+            Console.WriteLine(@"This movement is invalid. Please select it again or insert ""s"" to skip your turn.");
             Console.WriteLine();
         }
     }
