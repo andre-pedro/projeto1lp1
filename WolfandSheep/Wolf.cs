@@ -15,6 +15,7 @@ namespace WolfandSheep
         /// Row Property.
         /// </summary>
         public int Row { get; set; }
+        //
         public int PreviousColumn { get; private set; }
         public int PreviousRow { get; private set; }
 

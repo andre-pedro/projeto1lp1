@@ -6,6 +6,7 @@ namespace WolfandSheep
 {
     public class Render
     {
+        //
         private bool color = true;
 
         public void Draw(object[,] grid)

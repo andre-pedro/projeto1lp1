@@ -7,6 +7,7 @@ namespace WolfandSheep
     /// <summary>
     /// Enum Direction. Enumerates all possible directions.
     /// </summary>
+    /// 
     public enum Direction
     {
         North = 8,
