@@ -16,26 +16,23 @@ namespace WolfandSheep
         /// </summary>
         public int Row { get; set; }
 
-        public Direction Dir { get; set; }
-
         public int Id { get; set; }
 
-        public Sheep(int column, int row, Direction dir, int id)
+        public Sheep(int row, int column, int id)
         {
             // Build Player
-            Column = column;
             Row = row;
-            Dir = dir;
+            Column = column;
             Id = id;
         }
 
         /// <summary>
         /// Move method of Player. Moves the Player.
         /// </summary>
-        public void Move()
+        public void Move(Direction dir)
         {
             // Move according to direction
-            switch (Dir)
+            switch (dir)
             {
                 case Direction.North:
                     Row--; 

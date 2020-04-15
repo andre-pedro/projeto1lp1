@@ -7,24 +7,27 @@ namespace WolfandSheep
     public class GameManager
     {
         private int[,] Position { get; } = new int[0, 4];
-        private Tile[,] grid = new Tile[8, 8];
-
+        private object[,] grid = new object[8, 8];
+        private bool player;
+        private Wolf wolf;
+        private Sheep sheep;
         private Render b;
 
         public GameManager(Render b)
         {
             this.b = b;
+            player = true;
 
             for (int i = 0; i < grid.GetLength(0); ++i)
             {
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
-                    grid[i, j] = new Tile(TileType.Empty);
+                    grid[i, j] = new Square();
                 }
             }
             SpawnEntities();
 
-            b.Draw(grid);
+            GameLoop();
         }
 
         private void SpawnEntities()
@@ -38,14 +41,38 @@ namespace WolfandSheep
                 num = rand.Next(1, 8);
             }
 
-            grid[0, num].Type = TileType.Wolf;
-            grid[7, 0].Type = TileType.Sheep;
-            grid[7, 2].Type = TileType.Sheep;
-            grid[7, 4].Type = TileType.Sheep;
-            grid[7, 6].Type = TileType.Sheep;
+            grid[0, num] = new Wolf(0, num);
+            grid[7, 0] = new Sheep(7, 0, 1);
+            grid[7, 2] = new Sheep(7, 2, 2);
+            grid[7, 4] = new Sheep(7, 4, 3);
+            grid[7, 6] = new Sheep(7, 6, 4);
+
+        }
+
+        private void GameLoop()
+        {
+            string input = null;
+            while (true)
+            {
+                b.Draw(grid);
+
+                if (player == false)
+                {
+                    b.ShowMovementsText(player);
+                }
+                else
+                {
+
+                    while (input != "1" && input != "2" && input != "3" && input != "4")
+                    {
+                        b.ShowSelectSheepText();
+                        input = Console.ReadLine();
 
 
+                    }
 
+                }
+            }
         }
     }
 }
