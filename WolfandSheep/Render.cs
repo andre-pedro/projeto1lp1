@@ -140,6 +140,8 @@ namespace WolfandSheep
 
         public void MainMenu()
         {
+
+            Console.Clear();
             Console.WriteLine(@" _    _       _  __                _ _____ _");
             Console.WriteLine(@"| |  | |     | |/ _|              | / ___ | |");
             Console.WriteLine(@"| |  | | ___ | | |_ __ _ _ __   __| \ `--.| |__   ___  ___ _ __");
@@ -147,7 +149,7 @@ namespace WolfandSheep
             Console.WriteLine(@"\  /\  / (_) | | || (_| | | | | (_| /\__/ / | | | __ / __ / |_) |");
             Console.WriteLine(@" \/  \/ \___/|_|_| \__,_|_| |_|\__,_\____/|_| |_|\___|\___| .__/");
             Console.WriteLine(@"                                                          | |");
-            Console.WriteLine(@"                                                          |_|   ");
+            Console.WriteLine(@"                                                          |_|");
             Console.WriteLine("a game developed by André Pedro and Inês Martins!");
             Console.WriteLine();
             Console.WriteLine("Rules of the Game:");
@@ -155,9 +157,20 @@ namespace WolfandSheep
             Console.WriteLine("* bbbbbbb");
             Console.WriteLine("* ccccccc");
             Console.WriteLine("* ddddddd");
-            Console.WriteLine("Click X to start!");
-            Console.ReadLine();
-            Console.Clear();
+            Console.WriteLine("Press Enter to start!");
+            ConsoleKeyInfo enter = Console.ReadKey();
+
+            if (enter.Key == ConsoleKey.Enter)
+            {
+                return;
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Wrong input. Press any key to try again!");
+                Console.ReadKey();
+                MainMenu();
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace WolfandSheep
     public class GameManager
     {
         //
-        private int[,] Position { get; } = new int[0, 4];
+        //private int[,] Position { get; } = new int[0, 4];
         private object[,] grid = new object[8, 8];
         private bool player;
         private Wolf wolf;
