@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace WolfandSheep
@@ -132,9 +133,80 @@ namespace WolfandSheep
                     input = null;
                     player = !player;
                 }
+
+                if (CheckWin())
+                {
+                    break;
+                }
+
             }
         }
 
+        private bool CheckWin()
+        {
+            bool returnVal = false;
+
+            //check if wolf won
+            if(wolf.Row == grid.GetLength(0) -1)
+            {
+                returnVal = true;
+                b.ShowWolfWinMessage();
+            }
+            else if(IsWolfSurrounded())
+            {
+                returnVal = true;
+                b.ShowSheepWinMessage();
+            }
+
+            return returnVal;
+        }
+
+        private bool IsWolfSurrounded()
+        {
+            bool returnVal = false;
+            bool northeast = false;
+            bool northwest = false;
+            bool southeast = false;
+            bool southwest = false;
+
+            wolf.Move(Direction.NorthEast);
+            if (!CheckValidMovement(wolf))
+            {
+                northeast = true;
+            }
+            wolf.Row = wolf.PreviousRow;
+            wolf.Column = wolf.PreviousColumn;
+
+            wolf.Move(Direction.NorthWest);
+            if (!CheckValidMovement(wolf))
+            {
+                northwest = true;
+            }
+            wolf.Row = wolf.PreviousRow;
+            wolf.Column = wolf.PreviousColumn;
+
+            wolf.Move(Direction.SouthEast);
+            if (!CheckValidMovement(wolf))
+            {
+                southeast = true;
+            }
+            wolf.Row = wolf.PreviousRow;
+            wolf.Column = wolf.PreviousColumn;
+
+            wolf.Move(Direction.SouthWest);
+            if (!CheckValidMovement(wolf))
+            {
+                southwest = true;
+            }
+            wolf.Row = wolf.PreviousRow;
+            wolf.Column = wolf.PreviousColumn;
+
+            if (northeast == true && northwest == true && southeast == true && southwest == true)
+            {
+                returnVal = true;
+            }
+            return returnVal;
+        }
 
         private void SelectPlayingSheep(string input)
         {

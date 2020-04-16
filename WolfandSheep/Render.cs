@@ -125,5 +125,17 @@ namespace WolfandSheep
             Console.WriteLine(@"This movement is invalid. Please select it again or insert ""s"" to skip your turn.");
             Console.WriteLine();
         }
+
+        public void ShowSheepWinMessage()
+        {
+            Console.Clear();
+            Console.WriteLine(" Player 2 - Sheep - won the game");
+        }
+
+        public void ShowWolfWinMessage()
+        {
+            Console.Clear();
+            Console.WriteLine(" Player 1 - Wolf - won the game");
+        }
     }
 }
