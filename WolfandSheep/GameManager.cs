@@ -67,11 +67,13 @@ namespace WolfandSheep
             // Infinite Game Loop
             while (true)
             {
+                Console.Clear();
                 // If wolf is playing
                 if (player == false)
                 {
                     while (input != "7" && input != "9" && input != "1" && input != "3" && input != "s")
                     {
+                        Console.Clear();
                         b.Draw(grid);
                         b.ShowMovementsText(player);
                         input = Console.ReadLine();
@@ -100,6 +102,7 @@ namespace WolfandSheep
                 {
                     while (input != "1" && input != "2" && input != "3" && input != "4")
                     {
+                        Console.Clear();
                         b.Draw(grid);
                         b.ShowSelectSheepText();
                         input = Console.ReadLine();
@@ -110,6 +113,7 @@ namespace WolfandSheep
 
                     while (input != "7" && input != "9" && input != "s")
                     {
+                        Console.Clear();
                         b.Draw(grid);
                         b.ShowMovementsText(player);
                         input = Console.ReadLine();
@@ -147,12 +151,12 @@ namespace WolfandSheep
             bool returnVal = false;
 
             //check if wolf won
-            if(wolf.Row == grid.GetLength(0) -1)
+            if (wolf.Row == grid.GetLength(0) - 1)
             {
                 returnVal = true;
                 b.ShowWolfWinMessage();
             }
-            else if(IsWolfSurrounded())
+            else if (IsWolfSurrounded())
             {
                 returnVal = true;
                 b.ShowSheepWinMessage();

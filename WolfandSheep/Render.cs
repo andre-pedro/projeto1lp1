@@ -76,11 +76,11 @@ namespace WolfandSheep
 
             if (color == false)
             {
-                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
             }
             else
             {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
             }
 
         }
@@ -100,7 +100,7 @@ namespace WolfandSheep
             if (player == false)
             {
                 Console.WriteLine();
-                Console.WriteLine("I am Wolf. Pick a number from the numpad to move");
+                Console.WriteLine("It's the Wolf's turn. Pick a number from the numpad to move");
                 Console.WriteLine("7   9");
                 Console.WriteLine(@" \ / ");
                 Console.WriteLine(@" / \ ");
@@ -111,7 +111,7 @@ namespace WolfandSheep
             else
             {
                 Console.WriteLine();
-                Console.WriteLine("I am Sheep. Pick a number from the numpad to move");
+                Console.WriteLine("It's the Sheep's turn. Pick a number from the numpad to move");
                 Console.WriteLine("7   9");
                 Console.WriteLine(@" \ / ");
                 Console.WriteLine(@"or press ""s"" to skip!");
@@ -136,6 +136,28 @@ namespace WolfandSheep
         {
             Console.Clear();
             Console.WriteLine(" Player 1 - Wolf - won the game");
+        }
+
+        public void MainMenu()
+        {
+            Console.WriteLine(@" _    _       _  __                _ _____ _");
+            Console.WriteLine(@"| |  | |     | |/ _|              | / ___ | |");
+            Console.WriteLine(@"| |  | | ___ | | |_ __ _ _ __   __| \ `--.| |__   ___  ___ _ __");
+            Console.WriteLine(@"| |/\| |/ _ \| |  _/ _` | '_ \ / _` |`--. \ '_ \ / _ \/ _ \ '_ \ ");
+            Console.WriteLine(@"\  /\  / (_) | | || (_| | | | | (_| /\__/ / | | | __ / __ / |_) |");
+            Console.WriteLine(@" \/  \/ \___/|_|_| \__,_|_| |_|\__,_\____/|_| |_|\___|\___| .__/");
+            Console.WriteLine(@"                                                          | |");
+            Console.WriteLine(@"                                                          |_|   ");
+            Console.WriteLine("a game developed by André Pedro and Inês Martins!");
+            Console.WriteLine();
+            Console.WriteLine("Rules of the Game:");
+            Console.WriteLine("* aaaaaaa");
+            Console.WriteLine("* bbbbbbb");
+            Console.WriteLine("* ccccccc");
+            Console.WriteLine("* ddddddd");
+            Console.WriteLine("Click X to start!");
+            Console.ReadLine();
+            Console.Clear();
         }
     }
 }
