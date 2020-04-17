@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace WolfandSheep
 {
     public class Wolf
@@ -15,13 +12,24 @@ namespace WolfandSheep
         /// Row Property.
         /// </summary>
         public int Row { get; set; }
-        //
+
+        /// <summary>
+        /// Previous column position 
+        /// </summary>
         public int PreviousColumn { get; private set; }
+
+        /// <summary>
+        /// Previous row position
+        /// </summary>
         public int PreviousRow { get; private set; }
 
+        /// <summary>
+        /// Create Wolf values
+        /// </summary>
+        /// <param name="row"></param>
+        /// <param name="column"></param>
         public Wolf(int row, int column)
         {
-            // Build Player
             Row = row;
             Column = column;
         }
@@ -61,6 +69,10 @@ namespace WolfandSheep
                     break;
             }
         }
+
+        /// <summary>
+        /// Undo the last move made (wolf)
+        /// </summary>
         public void ResetMovement()
         {
             Row = PreviousRow;

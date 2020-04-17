@@ -1,24 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace WolfandSheep
 {
+
     public class Render
     {
-
+        //Bool to alternate between colors
         private bool color = true;
 
+        /// <summary>
+        /// Draw the grid on the console
+        /// </summary>
+        /// <param name="grid"></param>
         public void Draw(object[,] grid)
         {
             for (int i = 0; i < grid.GetLength(0); ++i)
             {
+                //Iterate through the grid  
                 for (int j = 0; j < grid.GetLength(1); j++)
                 {
                     SwitchTextColor();
 
                     Console.Write(SetSymbol(grid[i, j]) + " ");
 
+                    //If we found the end of the row switch color 
                     if (j == grid.GetLength(1) - 1)
                     {
                         SwitchTextColor();
@@ -29,6 +34,11 @@ namespace WolfandSheep
             }
         }
 
+        /// <summary>
+        /// Graphical character of the board and game pieces   
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public string SetSymbol(object obj)
         {
             string s = null;
@@ -70,6 +80,10 @@ namespace WolfandSheep
             return s;
         }
 
+
+        /// <summary>
+        /// Change the colors of the board in a checkered pattern
+        /// </summary>
         private void SwitchTextColor()
         {
             color = !color;
@@ -85,6 +99,9 @@ namespace WolfandSheep
 
         }
 
+        /// <summary>
+        /// Playable sheep choice text
+        /// </summary>
         public void ShowSelectSheepText()
         {
             Console.ForegroundColor = ConsoleColor.White;
@@ -93,10 +110,15 @@ namespace WolfandSheep
             Console.WriteLine();
         }
 
+
+        /// <summary>
+        /// Show player movement text
+        /// </summary>
+        /// <param name="player"></param>
         public void ShowMovementsText(bool player)
         {
             Console.ForegroundColor = ConsoleColor.White;
-
+            ///Wolf movement  
             if (player == false)
             {
                 Console.WriteLine();
@@ -108,6 +130,7 @@ namespace WolfandSheep
                 Console.WriteLine(@"or press ""s"" to skip!");
                 Console.WriteLine();
             }
+            ///Sheep movemet
             else
             {
                 Console.WriteLine();
@@ -119,6 +142,9 @@ namespace WolfandSheep
             }
         }
 
+        /// <summary>
+        /// Invalid movement text 
+        /// </summary>
         public void ShowInvalidMovementText()
         {
             Console.WriteLine();
@@ -126,6 +152,9 @@ namespace WolfandSheep
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// If sheep wins the game text
+        /// </summary>
         public void ShowSheepWinMessage()
         {
             Console.Clear();
@@ -134,6 +163,9 @@ namespace WolfandSheep
             MainMenu();
         }
 
+        /// <summary>
+        /// If wolf wins the game text
+        /// </summary>
         public void ShowWolfWinMessage()
         {
             Console.Clear();
@@ -142,6 +174,9 @@ namespace WolfandSheep
             MainMenu();
         }
 
+        /// <summary>
+        /// Rules text 
+        /// </summary>
         public void MainMenu()
         {
 

@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WolfandSheep
+﻿namespace WolfandSheep
 {
-    //
+    /// <summary>
+    /// Game grid square
+    /// </summary>
     public class Square
     {
 
