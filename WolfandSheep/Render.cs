@@ -6,7 +6,7 @@ namespace WolfandSheep
 {
     public class Render
     {
-        //
+
         private bool color = true;
 
         public void Draw(object[,] grid)
@@ -129,19 +129,24 @@ namespace WolfandSheep
         public void ShowSheepWinMessage()
         {
             Console.Clear();
-            Console.WriteLine(" Player 2 - Sheep - won the game");
+            Console.WriteLine(" Player 2 - Sheep - won the game!");
+            Console.ReadKey();
+            MainMenu();
         }
 
         public void ShowWolfWinMessage()
         {
             Console.Clear();
-            Console.WriteLine(" Player 1 - Wolf - won the game");
+            Console.WriteLine(" Player 1 - Wolf - won the game!");
+            Console.ReadKey();
+            MainMenu();
         }
 
         public void MainMenu()
         {
 
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine(@" _    _       _  __                _ _____ _");
             Console.WriteLine(@"| |  | |     | |/ _|              | / ___ | |");
             Console.WriteLine(@"| |  | | ___ | | |_ __ _ _ __   __| \ `--.| |__   ___  ___ _ __");
@@ -149,14 +154,26 @@ namespace WolfandSheep
             Console.WriteLine(@"\  /\  / (_) | | || (_| | | | | (_| /\__/ / | | | __ / __ / |_) |");
             Console.WriteLine(@" \/  \/ \___/|_|_| \__,_|_| |_|\__,_\____/|_| |_|\___|\___| .__/");
             Console.WriteLine(@"                                                          | |");
-            Console.WriteLine(@"                                                          |_|");
-            Console.WriteLine("a game developed by André Pedro and Inês Martins!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(@"a game developed by André Pedro and Inês Martins!");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.Write(@"         |_|");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine();
             Console.WriteLine("Rules of the Game:");
-            Console.WriteLine("* aaaaaaa");
-            Console.WriteLine("* bbbbbbb");
-            Console.WriteLine("* ccccccc");
-            Console.WriteLine("* ddddddd");
+            Console.WriteLine();
+            Console.WriteLine("Movement:");
+            Console.WriteLine("  * The first player controls the Wolf (W), whereas the second controls four Sheep (1, 2, 3, 4).");
+            Console.WriteLine("  * The Wolf plays first, spawning in a random position on the first row of the board." +
+                "\n    It can move in every diagonal, by using the 1, 3, 7 and 9 keys on the numpad.");
+            Console.WriteLine("  * Afterwards, it’s the Sheep’s turn. Select a sheep from the herd to move." +
+                "\n    Sheep can only move in forward diagonals (by selecting either 7 or 9 on the numpad)." +
+                "\n    Only one sheep can move per turn.");
+            Console.WriteLine("Objectives:");
+            Console.WriteLine("  * The Wolf's objective is to reach a sheep's original square (the last row).");
+            Console.WriteLine("  * The Sheep's objective is to surround the wolf, stopping him from moving.");
+            Console.WriteLine();
             Console.WriteLine("Press Enter to start!");
             ConsoleKeyInfo enter = Console.ReadKey();
 

@@ -17,11 +17,11 @@ namespace WolfandSheep
         private Sheep sheep3;
         private Sheep sheep4;
         private Sheep playingSheep;
-        private Render b;
+        private Render r;
 
         public GameManager(Render b)
         {
-            this.b = b;
+            this.r = b;
             player = false;
 
             for (int i = 0; i < grid.GetLength(0); ++i)
@@ -74,8 +74,8 @@ namespace WolfandSheep
                     while (input != "7" && input != "9" && input != "1" && input != "3" && input != "s")
                     {
                         Console.Clear();
-                        b.Draw(grid);
-                        b.ShowMovementsText(player);
+                        r.Draw(grid);
+                        r.ShowMovementsText(player);
                         input = Console.ReadLine();
 
                         if (input == "7" || input == "9" || input == "1" || input == "3")
@@ -89,7 +89,7 @@ namespace WolfandSheep
                             else
                             {
                                 wolf.ResetMovement();
-                                b.ShowInvalidMovementText();
+                                r.ShowInvalidMovementText();
                                 input = null;
                             }
                         }
@@ -103,8 +103,8 @@ namespace WolfandSheep
                     while (input != "1" && input != "2" && input != "3" && input != "4")
                     {
                         Console.Clear();
-                        b.Draw(grid);
-                        b.ShowSelectSheepText();
+                        r.Draw(grid);
+                        r.ShowSelectSheepText();
                         input = Console.ReadLine();
                     }
 
@@ -114,8 +114,8 @@ namespace WolfandSheep
                     while (input != "7" && input != "9" && input != "s")
                     {
                         Console.Clear();
-                        b.Draw(grid);
-                        b.ShowMovementsText(player);
+                        r.Draw(grid);
+                        r.ShowMovementsText(player);
                         input = Console.ReadLine();
 
                         if (input == "7" || input == "9")
@@ -129,7 +129,7 @@ namespace WolfandSheep
                             else
                             {
                                 playingSheep.ResetMovement();
-                                b.ShowInvalidMovementText();
+                                r.ShowInvalidMovementText();
                                 input = null;
                             }
                         }
@@ -154,12 +154,12 @@ namespace WolfandSheep
             if (wolf.Row == grid.GetLength(0) - 1)
             {
                 returnVal = true;
-                b.ShowWolfWinMessage();
+                r.ShowWolfWinMessage();
             }
             else if (IsWolfSurrounded())
             {
                 returnVal = true;
-                b.ShowSheepWinMessage();
+                r.ShowSheepWinMessage();
             }
 
             return returnVal;
