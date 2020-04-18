@@ -1,14 +1,18 @@
 # Wolf and Sheep - Grupo 09
 
 ## Autoria:
-[André Pedro]https://github.com/andre-pedro (a21701115)
-[Inês Barradas]https://github.com/kiray96 (a21803669)
+[André Pedro](https://github.com/andre-pedro) - a21701115  
+[Inês Barradas](https://github.com/kiray96) - a21803669
 
 ## Repartição de Tarefas
-´´´Inês Barradas´´´
+´´´
+Inês Barradas
+´´´
 
 
-´´´André Pedro´´´ 
+´´´
+André Pedro
+´´´ 
 
 
 Informação de quem fez o quê no projeto. Esta informação é obrigatória e deve
