@@ -1,7 +1,7 @@
 # Wolf and Sheep - Grupo 09
 
 ## Autoria:
-[Inês Barradas](https://github.com/kiray96) - a21803669
+[Inês Barradas](https://github.com/kiray96) - a21803669 <br>
 [André Pedro](https://github.com/andre-pedro) - a21701115  
 
 ## Repartição de Tarefas
@@ -24,6 +24,6 @@ métodos/funções e enumerações criadas.
 Mostrando a sequência do programa.
 
 ## Referências
-[Stackoverflow - Array initialization with default constructor](https://stackoverflow.com/questions/4839470/array-initialization-with-default-constructor)
-[C# Programming Yellow Book](https://static1.squarespace.com/static/5019271be4b0807297e8f404/t/5824ad58f7e0ab31fc216843/1478798685347/CSharp+Book+2016+Rob+Miles+8.2.pdf)
+[Stackoverflow - Array initialization with default constructor](https://stackoverflow.com/questions/4839470/array-initialization-with-default-constructor) <br>
+[C# Programming Yellow Book](https://static1.squarespace.com/static/5019271be4b0807297e8f404/t/5824ad58f7e0ab31fc216843/1478798685347/CSharp+Book+2016+Rob+Miles+8.2.pdf) <br>
 [The C# Player's Guide](http://starboundsoftware.com/books/c-sharp/CSharpPlayersGuide-Sample.pdf)
