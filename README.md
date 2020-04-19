@@ -1,10 +1,11 @@
 # Wolf and Sheep - Grupo 09
 
 ## Autoria:
-[Inês Barradas](https://github.com/kiray96) - a21803669 <br>
+[Inês Barradas](https://github.com/kiray96) - a21803669
 [André Pedro](https://github.com/andre-pedro) - a21701115  
 
 ## Repartição de Tarefas
+<<<<<<< HEAD
 ```Inês Barradas:``` Criação e desenvolvimento do tabueiro, desenvolvimento da
 classe Wolf, criação da classe Sheep, desenvolvimento do movimento dos agentes,
 verificação da condição de vitória, Documentação (Readme).
@@ -13,10 +14,27 @@ verificação da condição de vitória, Documentação (Readme).
 classe Wolf, Criação do Gameloop, criação e desenvolvimento do movimento dos
 agentes, 
 Criação de um menu inicial, Documentação (Fluxograma).
+=======
+```Inês Barradas:``` 
+* Criação e desenvolvimento do tabueiro
+* Desenvolvimento da classe Wolf,
+* Criação da classe Sheep
+* Desenvolvimento do movimento dos agentes, 
+* Verificação da condição de vitória,
+* Documentação (README).
+
+```André Pedro:```
+* Desenvolvimento do tabuleiro,
+* Criação e desenvolvimento da classe Wolf
+* Criação do Gameloop
+* Criação e desenvolvimento do movimento dos agentes, 
+* Criação do menu inicial
+* Documentação (Fluxograma).
+>>>>>>> f9a6cc42f5cb860517c7cdca7f0599f39378bcec
 
 
 ## Repositório 
-[Repositório público Git utilizado](https://github.com/andre-pedro/projeto1lp1)
+O repositório do projeto encontra-se [aqui](https://github.com/andre-pedro/projeto1lp1)
 
 ## Arquitetura da Solução
 
@@ -62,6 +80,7 @@ válido, acontece a ação de movimento. Verificamos se o lobo ganhou com o mét
 
 
 ### Fluxograma
+<<<<<<< HEAD
 
 ![Fluxograma](https://user-images.githubusercontent.com/45363491/79676490-c53c2f00-81de-11ea-87d7-a1936e568723.png)
 
@@ -70,3 +89,13 @@ válido, acontece a ação de movimento. Verificamos se o lobo ganhou com o mét
 [C# Programming Yellow Book](https://static1.squarespace.com/static/5019271be4b0807297e8f404/t/5824ad58f7e0ab31fc216843/1478798685347/CSharp+Book+2016+Rob+Miles+8.2.pdf) <br>
 [The C# Player's Guide](http://starboundsoftware.com/books/c-sharp/CSharpPlayersGuide-Sample.pdf)
 [.NET API](https://docs.microsoft.com/en-us/dotnet/api/?view=netcore-2.2)
+=======
+![fluxograma](./img/fluxograma.svg)
+
+## Referências
+* [Console.ForegroundColor Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.foregroundcolor?view=netframework-4.8)
+* [Two-dimensional Arrays, by Daniel Shiffman](https://processing.org/tutorials/2darray/)
+* [StackOverflow - Array initialization with default constructor](https://stackoverflow.com/questions/4839470/array-initialization-with-default-constructor) <br>
+* [C# Programming Yellow Book](https://static1.squarespace.com/static/5019271be4b0807297e8f404/t/5824ad58f7e0ab31fc216843/1478798685347/CSharp+Book+2016+Rob+Miles+8.2.pdf) <br>
+* [The C# Player's Guide](http://starboundsoftware.com/books/c-sharp/CSharpPlayersGuide-Sample.pdf)
+>>>>>>> f9a6cc42f5cb860517c7cdca7f0599f39378bcec
