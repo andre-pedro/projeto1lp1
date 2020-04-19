@@ -1,25 +1,25 @@
 # Wolf and Sheep - Grupo 09
 
 ## Autoria:
-[Inês Barradas](https://github.com/kiray96) - a21803669
+[Inês Barradas](https://github.com/kiray96) - a21803669 <br>
 [André Pedro](https://github.com/andre-pedro) - a21701115  
 
 ## Repartição de Tarefas
 ```Inês Barradas:``` 
 * Criação e desenvolvimento do tabueiro
-* Desenvolvimento da classe Wolf,
+* Desenvolvimento da classe Wolf
 * Criação da classe Sheep
-* Desenvolvimento do movimento dos agentes, 
-* Verificação da condição de vitória,
-* Documentação (README).
+* Desenvolvimento do movimento dos agentes 
+* Verificação da condição de vitória
+* Documentação (README)
 
 ```André Pedro:```
-* Desenvolvimento do tabuleiro,
+* Desenvolvimento do tabuleiro
 * Criação e desenvolvimento da classe Wolf
 * Criação do Gameloop
-* Criação e desenvolvimento do movimento dos agentes, 
+* Criação e desenvolvimento do movimento dos agentes 
 * Criação do menu inicial
-* Documentação (Fluxograma).
+* Documentação (Fluxograma)
 
 
 ## Repositório 
